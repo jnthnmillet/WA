@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+
+$primary: #e8e759
+$secondary: #cccb1e
+$tertiary: #4444e4
+$background: #f7f7f7
+$accent: #4444e4
+$inactive: #8e8eec
+$link: #ffffff
+$hover: #0f0f6c
+$active: #080840
+$focus: #59e8b3
+
+
+@import "uikit-mixins"
+// <--- add here file with your mixins
+@import "uikit-variables"
+@import "uikit"
+@import "uikit-components"
+
+html
+  background: $background
+
+.uk-link
+  color: $link
+
+.uk-alert-danger 
+  position: fixed
+  top: 0px
+  z-index: 999
+  width: 100%
+  left: 0px
+
+.uk-navbar
+  background: $primary
+  padding: 0.75em
+
+//menu
+
+#burger
+  padding-top: 4px
+
+.bar-bottom 
+  border-top: 1px solid white
+  padding-top: 1em
+  text-align: center
+
+// create and move to cards sass
+
+.uk-card 
+  border-top: 2px solid
+  position: relative
+  -webkit-transition: box-shadow 0.15s ease-out
+  transition: box-shadow 0.15s ease-out
+  border-radius: 3px
+  background: white
+  margin: 1em
+
+.uk-card:hover 
+  box-shadow: 0 0 0 7px rgba(0,0,0,0.045)
+
+.uk-card .uk-inline 
+  z-index: 99
+
+.uk-card .uk-card-footer 
+  padding: 0.55rem 1rem
+
+.uk-card .uk-card-header 
+  padding: 0.55rem 1rem
+
+.uk-card .cat-txt 
+  font-weight: 600
+  text-transform: uppercase
+  font-size: 0.75rem
+  letter-spacing: 0.01em
+
+.uk-card-body
+  padding: 1em
+
+.uk-inline-clip.uk-transition-toggle
+  text-align: center

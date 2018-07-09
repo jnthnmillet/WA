@@ -1,0 +1,23 @@
+<% content_for :header do %>
+  <nav class="uk-navbar">
+  <div class="uk-background-primary">
+    <a class="uk-navbar-brand" href="#">Quick-start-app</a>
+    <div class="uk-navbar-flip">
+      <ul class="uk-subnav" data-uk-margin="">
+        <li class="uk-visible@s uk-first-column">
+          <%= link_to "Sign in", new_user_session_path, class: "uk-navbar-brand" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<% end %>
+
+<% content_for :content do %>
+  <div class="uk-grid uk-grid-medium uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-6@xl uk-grid-match js-filter uk-flex-top uk-flex-wrap-top uk-sortable" data-uk-grid="masonry: true" data-uk-sortable="handle: .drag-icon" style="height: 1617px;">
+    <!-- card -->
+    <% @posts.each do |post| %>
+      <%= render partial: "post", locals: { post: post } %>
+    <% end %>
+  </div>
+<% end %>
