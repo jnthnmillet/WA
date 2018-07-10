@@ -2,7 +2,7 @@ require 'test_helper'
 
 class DeviseTest < ActionDispatch::IntegrationTest
   test 'should be able to see the login page' do
-    get '/'
+    get '/users/sign_in'
     assert_response 200
     assert_select 'legend.uk-legend', 'Login'
     assert_select 'legend.uk-legend', text: 'Register', count: 0
@@ -27,12 +27,16 @@ class DeviseTest < ActionDispatch::IntegrationTest
     post '/users',
          params: {
            user: {
-             email: 'asda@sample.com',
+             name: 'Clay Reyes',
+             email: 'creyes@sample.com',
              password: 'password',
              password_confirmation: 'password'
            }
          }
-    assert_response 200
+    assert_response 302
+    assert_equal Person.last.first_name, 'Clay'
+    assert_equal Person.last.last_name, 'Reyes'
+    assert_equal User.last.email, 'creyes@sample.com'
   end
 
   test 'should be able to see password reset page' do

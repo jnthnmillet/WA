@@ -32,7 +32,9 @@ Style/Documentation:
     - 'app/controllers/*'
     - 'app/helpers/*'
     - 'test/**/*.rb'
+    - 'app/**/*'
 
 Style/ClassAndModuleChildren:
   Exclude:
     - 'test/*'
+    - 'app/**/*'

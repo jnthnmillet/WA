@@ -16,7 +16,9 @@ gem 'uglifier',        '3.2.0'
 gem 'uikit-rails',     '~> 1.0', '>= 1.0.1'
 
 group :development, :test do
+  gem 'better_errors'
   gem 'byebug', '9.0.6', platform: :mri
+  gem 'pry-byebug'
 end
 
 group :development do
