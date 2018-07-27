@@ -9,11 +9,11 @@ gem 'omniauth-facebook', '5.0.0'
 gem 'pg',              '0.20.0'
 gem 'pry',             '0.11.3'
 gem 'puma',            '3.9.1'
-gem 'rails',           '5.1.4'
+gem 'rails',           '5.2.0'
 gem 'sass-rails',      '5.0.6'
 gem 'turbolinks',      '5.0.1'
 gem 'uglifier',        '3.2.0'
-gem 'uikit-rails',     '~> 1.0', '>= 1.0.1'
+gem "rails-uikit", git: 'git://github.com/nicbet/rails-uikit.git'
 
 group :development, :test do
   gem 'better_errors'
