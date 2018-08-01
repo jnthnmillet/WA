@@ -281,4 +281,10 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
   config.omniauth :facebook, '657497324588670', 'db9d09a0c562d7bb8c1290068355be3a', callback_url: 'http://localhost:3000/users/auth/facebook/callback'
+
+  if Rails.env == 'development' || Rails.env == 'staging'
+    config.omniauth :google_oauth2, '921403900697-tka2t61vtntmcrel85o4lljo5qd0p45j.apps.googleusercontent.com', 'leP71t6T29v-vh71DrOo1_fw', callback_url: 'http://localhost:3000/users/auth/google_oauth2/callback', skip_jwt: true
+  elsif Rails.env == 'production'
+    config.omniauth :google_oauth2, '921403900697-tka2t61vtntmcrel85o4lljo5qd0p45j.apps.googleusercontent.com', 'leP71t6T29v-vh71DrOo1_fw', callback_url: 'https://still-sierra-86804.herokuapp.com/users/auth/google_oauth2/callback', skip_jwt: true
+  end
 end
