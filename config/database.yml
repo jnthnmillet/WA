@@ -11,14 +11,21 @@ default: &default
 
 development:
   <<: *default
-  database: db/development
+  database: quick_start_web_db/development
+  username: louie
+  password: root
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test
+  database: quick_start_web_db/test
+  username: louie
+  password: root
 
 production:
   <<: *default
-  database: db/production
+  database: quick_start_web_db/production
+  username: louie
+  password: root
