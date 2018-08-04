@@ -1,41 +1,56 @@
-<!-- This is the nav bar of the app -->
-<nav class="uk-navbar">
-  <div class="uk-container uk-container-expand uk-background-primary">
-    <a class="uk-navbar-brand" href="#">Quick-start-app</a>
-    <div class="uk-navbar-flip">
+<nav class="uk-navbar-container" uk-navbar>
+
+    <div class="uk-navbar-left">
+
+      <ul class="uk-navbar-nav">
+          <li class="uk-active">
+            <a href="#">
+              Quick start app
+            </a>
+          </li>
+      </ul>
+
+    </div>
+
+    <div class="uk-navbar-right">
+
       <ul class="uk-navbar-nav">
         <li>
-          <a href="#sidebar" id="burger" data-uk-offcanvas="{mode:'slide'}">
+          <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
             <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <rect y="9" width="20" height="2"></rect>
               <rect y="3" width="20" height="2"></rect>
               <rect y="15" width="20" height="2"></rect>
             </svg>
-          </a>
+          </button>
         </li>
       </ul>
+
     </div>
-  </div>
+
 </nav>
 
-<!-- This is the off-canvas sidebar -->
-<div id="sidebar" class="uk-offcanvas">
-  <div class="uk-offcanvas-bar">
-    <div class="uk-panel">
-      <h3 class="uk-panel-title">Quick-start-app</h3>
-      <ul class="uk-nav">
-        <li class="uk-active">
-          <%= link_to 'New Post', "#" %>
-        </li>
-        <li>
-        </li>
-      </ul>
-    </div>
-    <div class="uk-position-bottom bar-bottom uk-panel">
-      <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link" %>
+<div class="uk-offcanvas-content">
+  <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+      <div class="uk-panel">
+        <h3 class="uk-panel-title">NREC</h3>
+        <ul class="uk-nav">
+            <li class="uk-nav-header">
+              Dashboard
+            </li>
+            <li>
+              <%= link_to 'Profile', '#' %>
+            </li>
+            <li>
+              <%= link_to 'Listings', '#' %>
+            </li>
+            <li class="uk-nav-divider"></li>
+        </ul>
+      </div>
+      <div class="uk-position-bottom bar-bottom uk-panel">
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link" %>
+      </div>
     </div>
   </div>
 </div>
-
-
-
