@@ -10,13 +10,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def google_oauth2
-    @person = Person.new(build_name)
-    return unless @person.save
-    @user = User.new
-    @user = @user.person_id.merge(@person.id)
-    @user.save!
-
-    @user = User.from_omniauth(request.env['omniauth.auth'])
+    google_response = request.env['omniauth.auth']
+    @person = Person.new(build_name(google_response))
+    @user = User.from_omniauth(google_response, @person)
 
     if @user.persisted?
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
@@ -33,12 +29,32 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
 
-  def build_name
-    auth = request.env['omniauth.auth']
-    name_parts = auth['info']['name'].split(' ')
+  def build_name(google_response)
+    name_parts = google_response['info']['name'].split(' ')
+    first_name = name_parts.shift
+    last_name = name_parts.join(' ')
+    name_hash(first_name, last_name)
+  end
+
+  def name_hash(first_name, last_name)
     {
-      first_name: name_parts[0],
-      last_name: name_parts.drop(1).join(' ')
+      first_name: first_name,
+      last_name: last_name
+    }
+  end
+
+  def user_params(google_response, person)
+    person_id = person.id
+    email = google_response['info']['email']
+
+    user_hash(email, person_id)
+  end
+  
+  def user_hash(email, person_id)
+    {
+      email: email,
+      person_id: person_id,
+      password: Devise.friendly_token[0, 20]
     }
   end
 end
