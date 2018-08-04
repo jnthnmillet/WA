@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test '.person.name' do
-    assert_equal users(:user_squall).person.name, 'Squall Lionheart'
+  test '.person.full_name' do
+    assert_equal users(:user_squall).person.full_name, 'Squall Lionheart'
   end
 
   test 'Mock Login for Google Auth' do

@@ -11,4 +11,7 @@ Rails.application.routes.draw do
       root 'posts#index', as: :unauthenticated_root
     end
   end
+  scope :admin do
+    resources :users
+  end
 end

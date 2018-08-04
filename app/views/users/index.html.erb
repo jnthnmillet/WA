@@ -1,0 +1,33 @@
+<% content_for :header do %>
+  <%= render 'shared/menu' %>
+<% end %>
+
+<% content_for :content do %>
+  <div class="content-well p-x-2 p-y-2">
+    <div class="uk-container">
+      <table class="uk-table uk-table-middle uk-table-divider uk-table-large uk-table-justify" data-uk-scrollspy="cls:uk-animation-fade;">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Access</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td class="uk-width-1-5"><%= user.person.full_name %></td>
+              <td class="uk-width-1-5"><%= user.email %></td>
+              <td class="uk-width-1-5"><%= user.member_level %></td>
+              <td class="uk-width-2-5 uk-actions">
+                <%= link_to 'Delete', user_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'uk-text-danger' %>
+                <%= link_to 'Edit', user_path(user.id), class: 'uk-text-success' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>
