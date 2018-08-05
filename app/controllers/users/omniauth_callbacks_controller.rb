@@ -10,13 +10,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def google_oauth2
-    person = Person.new(build_name)
-    return unless person.save
-    @user = User.new(sign_up_params.merge(person_id: person.id))
+    @person = Person.new(build_name)
+    return unless @person.save
+    @user = User.new
+    @user = @user.person_id.merge(@person.id)
+    @user.save!
 
     @user = User.from_omniauth(request.env['omniauth.auth'])
 
-    if @user.persisted? || @user.save
+    if @user.persisted?
       flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
       sign_in_and_redirect @user, event: :authentication
     else
