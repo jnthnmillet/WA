@@ -11,8 +11,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
     google_response = request.env['omniauth.auth']
-    @person = Person.new(build_name(google_response))
-    @user = User.from_omniauth(google_response, @person)
+    @user = User.from_omniauth(google_response)
 
     if @user.persisted?
       set_flash_message(:notice, :success, kind: 'Google') if is_navigational_format?
@@ -30,6 +29,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def build_name(google_response)
+    return unless google_response["info"]['name']
     name_parts = google_response['info']['name'].split(' ')
     first_name = name_parts.shift
     last_name = name_parts.join(' ')

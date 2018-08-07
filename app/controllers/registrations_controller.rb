@@ -1,27 +1,39 @@
 class RegistrationsController < Devise::RegistrationsController
+  before_action :build_person, only: :create
+  respond_to :html, :js
+
   def new
     super
   end
 
   def create
-    person = Person.new(build_name)
-    return unless person.save
-    @user = User.new(sign_up_params.merge(person_id: person.id))
-    if @user.save
-      flash[:success] = 'User has been created'
-      redirect_to unauthenticated_root_path
+    if @person.save
+      @user = User.new(sign_up_params.merge(person_id: @person.id))
+      if @user.save
+        redirect_success!
+      else
+        @error = @user.errors.full_messages.first
+      end
     else
-      @error = @user.errors.full_messages.first
+      @error = @person.errors.full_messages.first
     end
   end
 
   private
 
-  def build_name
-    name_parts = params[:user][:name].split(' ')
+  def build_person
+    @person = Person.new(name_params)
+  end
+
+  def name_params
     {
-      first_name: name_parts[0],
-      last_name: name_parts.drop(1).join(' ')
+      first_name: params[:user][:first_name],
+      last_name: params[:user][:last_name]
     }
+  end
+
+  def redirect_success!
+    flash[:success] = 'User has been created'
+    redirect_to unauthenticated_root_path
   end
 end
