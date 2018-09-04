@@ -27,7 +27,8 @@ class DeviseTest < ActionDispatch::IntegrationTest
     post '/users',
          params: {
            user: {
-             name: 'Clay Reyes',
+             first_name: 'Clay',
+             last_name: 'Reyes',
              email: 'creyes@sample.com',
              password: 'password',
              password_confirmation: 'password'

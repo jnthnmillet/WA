@@ -16,7 +16,6 @@
         </thead>
         <tbody>
           <% @users.each do |user| %>
-          <% binding.pry %>
             <tr>
               <td class="uk-width-1-5"><%= user.person.full_name %></td>
               <td class="uk-width-1-5"><%= user.email %></td>
