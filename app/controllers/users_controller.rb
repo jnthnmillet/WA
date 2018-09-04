@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @user.person.update(person_hash) && @user.update(user_params)
+      if user_person_update
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
                          %i[email member_level password password_confirmation]
                        else
                          %i[email member_level]
-                    end
+                       end
     params.require(:user).permit(user_param_array)
   end
 
@@ -53,5 +53,9 @@ class UsersController < ApplicationController
       first_name: params[:user][:first_name],
       last_name: params[:user][:last_name]
     }
+  end
+
+  def user_person_update
+    @user.person.update(person_hash) && @user.update(user_params)
   end
 end
