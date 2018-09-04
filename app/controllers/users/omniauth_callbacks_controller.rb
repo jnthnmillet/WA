@@ -29,7 +29,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
   def build_name(google_response)
-    return unless google_response["info"]['name']
+    return unless google_response['info']['name']
     name_parts = google_response['info']['name'].split(' ')
     first_name = name_parts.shift
     last_name = name_parts.join(' ')
