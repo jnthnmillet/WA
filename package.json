@@ -1,0 +1,8 @@
+{
+  "name": "kareer",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.25.1"
+  }
+}

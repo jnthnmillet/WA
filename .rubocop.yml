@@ -1,0 +1,40 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/*'
+    - '**/templates/**/*'
+    - '**/vendor/**/*'
+    - 'actionpack/lib/action_dispatch/journey/parser.rb'
+    - 'railties/test/fixtures/tmp/**/*'
+
+# Prefer assert_not_x over refute_x
+CustomCops/RefuteNot:
+  Include:
+    - '**/test/**/*'
+
+# Prefered length of file
+Metrics/LineLength:
+  # This will disable the rule completely, regardless what other options you put
+  Enabled: false
+  # Change the default 80 chars limit value
+  Max: 100
+  Include:
+    - 'config/*'
+
+Style/MixinUsage:
+  Exclude:
+    - 'bin/*'
+
+Style/Documentation:
+  Exclude:
+    - 'app/mailers/*'
+    - 'app/models/*'
+    - 'app/controllers/*'
+    - 'app/helpers/*'
+    - 'test/**/*.rb'
+    - 'app/**/*'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/*'
+    - 'app/**/*'

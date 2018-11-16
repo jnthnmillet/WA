@@ -1,0 +1,318 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+
+$primary: #E2DFDF
+$secondary: #cccb1e
+$tertiary: #4444e4
+$background: #fff
+$accent: #4444e4
+$inactive: #8e8eec
+$link: #ffffff
+$hover: #0f0f6c
+$active: #080840
+$focus: #59e8b3
+
+@import "uikit/variables-theme.scss"
+@import "uikit/mixins-theme.scss"
+@import "uikit/uikit-theme.scss"
+
+html
+  background: $background
+
+.uk-link
+  color: $link
+
+.uk-alert-danger 
+  position: fixed
+  top: 0px
+  z-index: 999
+  width: 100%
+  left: 0px
+
+.uk-navbar
+  background: $primary
+  padding: 0.75em
+
+//menu
+
+#burger
+  padding-top: 4px
+
+.bar-bottom 
+  border-top: 1px solid white
+  padding-top: 1em
+  text-align: center
+
+// create and move to cards sass
+
+.uk-card 
+  border-top: 2px solid
+  position: relative
+  -webkit-transition: box-shadow 0.15s ease-out
+  transition: box-shadow 0.15s ease-out
+  border-radius: 3px
+  background: white
+  margin: 1em
+
+.uk-card:hover 
+  box-shadow: 0 0 0 7px rgba(0,0,0,0.045)
+
+.uk-card .uk-inline 
+  z-index: 99
+
+.uk-card .uk-card-footer 
+  padding: 0.55rem 1rem
+
+.uk-card .uk-card-header 
+  padding: 0.55rem 1rem
+
+.uk-card .cat-txt 
+  font-weight: 600
+  text-transform: uppercase
+  font-size: 0.75rem
+  letter-spacing: 0.01em
+
+.uk-card-body
+  padding: 1em
+
+.uk-inline-clip.uk-transition-toggle
+  text-align: center
+
+// Listings
+.uk-label 
+    display: inline-block
+    padding: 0 10px
+    background: #e8ecf1
+    line-height: 1.5
+    font-size: 12px
+    color: #656565
+    vertical-align: middle
+    white-space: nowrap
+    border-radius: 2px
+    text-transform: uppercase
+    width: 12%
+    text-align: center
+
+.uk-child
+  background: transparent
+  text-transform: capitalize
+  white-space: normal
+
+.uk-button-default
+    background-color: transparent
+    color: #222
+    border: 1px solid #e5e5e5
+
+.uk-button-add-listing
+  margin-right: 5%
+  width: 10%
+  height: 35px
+  margin-top: 3.5%
+
+.uk-button-medium
+  width: 30%
+  margin-top: 25%
+  margin-left: 5%
+  background: #1ea2bb 
+
+#listing_price
+  padding: 10px 10px 10px 25px
+  width: 75%
+
+.static-value
+  position: absolute
+  left: 350px
+  font-weight: bold
+  color: #444
+  top: 97px
+  font-size: 15px
+
+//  Add listing modal form
+.uk-input-listing
+    margin: 5%
+    width: 80%
+    height: 15px
+    font-size: 15px
+    padding: 10px
+
+.uk-input-listing-small
+  width: 15%
+
+.uk-input-listing-large
+  height: 180px
+  width: 115%
+
+.uk-select
+  width: 85%
+  height: 40px
+  color: #8a8a8a
+  background: #ffffff
+
+.uk-select-small
+  width: 60%
+  margin: -5px
+
+.select-small
+  width: 55%
+
+.uk-column
+  margin: 10%
+
+.form-input
+  height: 275px
+  width: 30%
+  margin-left: auto
+  left: auto
+  right: auto
+  float: left
+
+.form-input-image
+  background: #ecf4f7
+  width: 65%
+  border: 1px solid #a9a9a9
+
+.form-input-p
+  background: white
+  height: 60px
+  border-bottom: 1px solid #a9a9a9
+
+.form-input-upload-button
+  width: 30%
+  margin: 2%
+  color: #8f8f8f
+  padding: 3px
+
+.uk-modal-dialog
+  height: 420px
+  margin: 100px auto
+  width: 80%
+  top: 50px
+
+.uk-modal-footer
+  margin-top: 15px
+  padding: 15px 30px
+  border-top: 1px solid #e5e5e5
+  height: 35px
+
+.uk-modal
+  overflow-y: unset !important
+
+.uk-tab li.uk-active a
+  background: #026b84
+  color: white !important
+
+.uk-tab li a 
+  color: #636363 !important
+
+.uk-button-listing
+  background: #a3c105
+  width: 14%
+
+.uk-switcher
+  height: 270px
+
+.uk-tab > li
+  margin-bottom: -1px
+  float: left
+  width: 25%
+  position: relative
+  text-align: center
+
+// feature dropdown
+.feature-dropdown
+  width: 25%
+  height: 180px
+  background: #ffffff
+  position: absolute
+  border: 1px solid #c2c2c2
+  margin: -1% 0 0% 1.5%
+  overflow: overlay
+
+.dropdown-tags
+  width: 100%
+  text-align: unset
+
+//icon
+.uk-icon
+  margin: 0
+  border: none
+  border-radius: 0
+  overflow: visible
+  font: inherit
+  color: inherit
+  text-transform: none
+  padding: 0
+  background-color: transparent
+  display: inline-block
+  fill: currentcolor
+  line-height: 0
+
+.uk-modal-dialog > .uk-close:first-child
+  margin: -10px -10px 0 0
+  float: right
+
+.uk-close:after
+  display: none
+
+.uk-badge
+  margin-bottom: 3px
+  margin-right: 2px
+  padding: 0 12px
+  background: #edf4f7
+  line-height: 30px
+  color: #828282
+  border-radius: 10px
+
+.plus-icon
+  position: relative
+  font-size: 25px
+  bottom: 45px
+  float: right
+  right: 32px
+
+// edit form
+.edit-form
+    height: 460px
+    margin: auto
+    width: 80%
+    top: 50px
+    position: relative
+    box-sizing: border-box
+    padding: 20px
+    max-width: calc(100% - 20px)
+    background: #fff
+
+.edit-button
+  position: absolute
+  margin-top: 45px
+  margin-left: -45px
+
+// status select
+.status-select
+  position: absolute
+  top: 15px
+  right: 15px
+  width: 10%
+  height: 25px
+
+.disabledbutton 
+  pointer-events: none
+  opacity: 0.4
+
+span.head
+  line-height: 80px
+
+// links
+.uk-actions
+  a
+    padding-right: 1em

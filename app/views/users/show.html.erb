@@ -1,0 +1,55 @@
+<% content_for :header do %>
+  <%= render 'shared/menu' %>
+<% end %>
+
+<% content_for :content do %>
+  <%= form_for(@user) do |f| %>
+    <div class="uk-container">
+      <fieldset class="uk-fieldset">
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">First Name</label>
+          <div class="uk-form-controls">
+            <%= f.text_field :first_name, class: 'uk-input', value: @user.person.first_name %>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">Last Name</label>
+          <div class="uk-form-controls">
+            <%= f.text_field :last_name, class: 'uk-input', value: @user.person.last_name %>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">Email</label>
+          <div class="uk-form-controls">
+            <%= f.email_field :email, class: 'uk-input' %>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">Member Level</label>
+          <div class="uk-form-controls">
+            <%= f.select :member_level, User.member_levels.keys, {}, { selected: @user.member_level, class: 'uk-select' } %>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">Password</label>
+          <div class="uk-form-controls">
+            <%= f.password_field :password, class: 'uk-input' %>
+          </div>
+        </div>
+
+        <div class="uk-margin">
+          <label class="uk-form-label" for="form-horizontal-text">Password Confirmation</label>
+          <div class="uk-form-controls">
+            <%= f.password_field :password_confirmation, class: 'uk-input' %>
+          </div>
+        </div>
+
+        <%= f.submit "Save changes", class: "uk-button uk-button-primary" %>
+      </fieldset>
+    </div>
+  <% end %>
+<% end %>

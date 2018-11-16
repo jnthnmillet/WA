@@ -1,0 +1,53 @@
+<nav class="uk-navbar-container" uk-navbar>
+
+    <div class="uk-navbar-left">
+
+      <ul class="uk-navbar-nav">
+          <li class="uk-active">
+            <a href="#">
+              Quick start app
+            </a>
+          </li>
+      </ul>
+
+    </div>
+
+    <div class="uk-navbar-right">
+
+      <ul class="uk-navbar-nav">
+        <li>
+          <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
+            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <rect y="9" width="20" height="2"></rect>
+              <rect y="3" width="20" height="2"></rect>
+              <rect y="15" width="20" height="2"></rect>
+            </svg>
+          </button>
+        </li>
+      </ul>
+
+    </div>
+
+</nav>
+
+<div class="uk-offcanvas-content">
+  <div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+      <div class="uk-panel">
+        <h3 class="uk-panel-title">Quick Start App</h3>
+        <ul class="uk-nav">
+            <li>
+              <%= link_to 'Dashboards', authenticated_root_path %>
+            </li>
+            <li>
+              <%= link_to 'Users', users_path %>
+            </li>
+            <li class="uk-nav-divider"></li>
+        </ul>
+      </div>
+      <div class="uk-position-bottom bar-bottom uk-panel">
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link" %>
+      </div>
+    </div>
+  </div>
+</div>
