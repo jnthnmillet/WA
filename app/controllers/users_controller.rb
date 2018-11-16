@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update show destroy]
 
   def index
-    @users = User.all
+    @users = send_request('api/admins', hash, 'get')['data']
   end
 
   def show; end

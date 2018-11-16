@@ -34,19 +34,13 @@
   <div id="offcanvas-nav" uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar">
       <div class="uk-panel">
-        <h3 class="uk-panel-title">NREC</h3>
+        <h3 class="uk-panel-title">Quick Start App</h3>
         <ul class="uk-nav">
-            <li class="uk-nav-header">
-              Dashboard
+            <li>
+              <%= link_to 'Dashboards', authenticated_root_path %>
             </li>
             <li>
               <%= link_to 'Users', users_path %>
-            </li>
-            <li>
-              <%= link_to 'Profile', '#' %>
-            </li>
-            <li>
-              <%= link_to 'Listings', '#' %>
             </li>
             <li class="uk-nav-divider"></li>
         </ul>

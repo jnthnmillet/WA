@@ -13,6 +13,7 @@ class SiteSetting
 
   def fetch(key = false)
     raise('COMMMMMONNNN PERSON!') if key == false
+
     if result == data[key]
       result
     else

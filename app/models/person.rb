@@ -1,5 +1,3 @@
 class Person < ApplicationRecord
-  def full_name
-    "#{first_name} #{last_name}"
-  end
+  attr_accessor :username, :email, :fullName, :firstName, :lastName, :roles, :enabled
 end

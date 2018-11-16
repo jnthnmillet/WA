@@ -106,13 +106,13 @@ class PostsController < ApplicationController
   def vote
     direction = params[:direction]
 
-    # Make sure we've specified a direction
-    raise 'No direction parameter specified to #vote action.' unless direction
+    # # Make sure we've specified a direction
+    # raise 'No direction parameter specified to #vote action.' unless direction
 
-    # Make sure the direction is valid
-    unless %w[like bad].member? direction
-      raise "Direction '#{direction}' is not a valid direction for vote method."
-    end
+    # # Make sure the direction is valid
+    # unless %w[like bad].member? direction
+    #   raise "Direction '#{direction}' is not a valid direction for vote method."
+    # end
 
     @post.vote_by voter: current_user, vote: direction
 

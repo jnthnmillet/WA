@@ -10,20 +10,29 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Access</th>
-            <th>Actions</th>
+            <th>Roles</th>
+            <th>Status</th>
+            <th>Date Created</th>
           </tr>
         </thead>
         <tbody>
           <% @users.each do |user| %>
             <tr>
-              <td class="uk-width-1-5"><%= user.person.full_name %></td>
-              <td class="uk-width-1-5"><%= user.email %></td>
-              <td class="uk-width-1-5"><%= user.member_level %></td>
-              <td class="uk-width-2-5 uk-actions">
-                <%= link_to 'Delete', user_path(user.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'uk-text-danger' %>
-                <%= link_to 'Edit', user_path(user.id), class: 'uk-text-success' %>
+              <td class="uk-width-1-5"><%= user['fullName'] %></td>
+              <td class="uk-width-1-5"><%= user['email'] %></td>
+              <td class="uk-width-1-5">
+                <% user['roles'].each do |role| %>
+                  <%= role %>
+                <% end %>
               </td>
+              <td class="uk-width-1-5">
+                <% if user['enabled'] %>
+                  Enabled
+                <% else %>
+                  Disabled
+                <% end %>
+              </td>
+              <td class="uk-width-1-5"><%= format_date(user['dateCreated']) %></td>
             </tr>
           <% end %>
         </tbody>
