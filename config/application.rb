@@ -6,8 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module Kareer
   class Application < Rails::Application
+    # Fix assets precompile error, this may not be needed in production
+    config.assets.initialize_on_precompile = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
