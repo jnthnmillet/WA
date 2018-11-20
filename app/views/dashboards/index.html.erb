@@ -18,8 +18,13 @@
   <%= render 'shared/menu' %>
 <% end %>
 
-<% content_for :content do %>
-  <div class="content-well p-x-2 p-y-2">
-    <span></span>
+<% content_for :side do %>
+  <%= render 'shared/side' %>
+<% end %>
+
+<% content_for :content do %>  
+  <div class="main uk-section">
+    <div class="uk-container uk-container-expand uk-position-relative">
+    </div>
   </div>
 <% end %>
