@@ -13,8 +13,7 @@
 
   <body>
     <%= yield :header %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= yield :side %>
     <%= yield :content %>
   </body>
 </html>

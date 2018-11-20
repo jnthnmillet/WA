@@ -12,7 +12,7 @@
  */
 
 $primary: #E2DFDF
-$secondary: #cccb1e
+$secondary: #222
 $tertiary: #4444e4
 $background: #fff
 $accent: #4444e4
@@ -21,6 +21,8 @@ $link: #ffffff
 $hover: #0f0f6c
 $active: #080840
 $focus: #59e8b3
+$content: #f8f9fb
+
 
 @import "uikit/variables-theme.scss"
 @import "uikit/mixins-theme.scss"
@@ -40,8 +42,17 @@ html
   left: 0px
 
 .uk-navbar
-  background: $primary
-  padding: 0.75em
+  background: $secondary !important
+  padding: 0
+  height: 55px
+
+.uk-navbar-nav > li > a , .uk-nav > li > a
+  color: $link !important
+  text-transform: none
+  font-size: 20px
+
+.uk-side .uk-nav > li > a 
+  padding: 15px 0
 
 //menu
 
@@ -282,15 +293,15 @@ html
 
 // edit form
 .edit-form
-    height: 460px
-    margin: auto
-    width: 80%
-    top: 50px
-    position: relative
-    box-sizing: border-box
-    padding: 20px
-    max-width: calc(100% - 20px)
-    background: #fff
+  height: 460px
+  margin: auto
+  width: 80%
+  top: 50px
+  position: relative
+  box-sizing: border-box
+  padding: 20px
+  max-width: calc(100% - 20px)
+  background: #fff
 
 .edit-button
   position: absolute
@@ -352,3 +363,48 @@ span.head
 
 .uk-button-primary:hover
   background-color: #222
+
+// side nav
+.uk-side
+  position: fixed
+  top: 54px
+  bottom: 0
+  box-sizing: border-box
+  width: 250px !important
+  padding: 0px 20px
+  overflow: auto
+  background: $secondary
+
+.side
+  position: absolute
+  right: 10px
+  top: 10px
+
+.main
+  background: $content
+
+.uk-section
+  padding: 20px
+
+.main .uk-container
+  @media (min-width:960px)
+    padding: 0 3px
+  @media (min-width:1200px)
+    margin-left: 0px
+    margin-right: 0px
+    margin-top: 0px
+  @media (min-width:1400px)
+    margin-left: 0px
+    margin-right: 0px
+    margin-top: 0px
+
+.uk-side+.main
+  @media (min-width:640px)
+    margin-left: 20px
+  @media (min-width:960px)
+    margin-left: 250px
+  @media (min-width:1200px)
+    margin-left: 250px
+  @media (min-width:1400px)
+    margin-left: 250px
+

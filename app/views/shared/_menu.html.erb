@@ -5,7 +5,7 @@
       <ul class="uk-navbar-nav">
           <li class="uk-active">
             <a href="#">
-              Quick start app
+              Bliimo Admin Module
             </a>
           </li>
       </ul>
@@ -13,10 +13,10 @@
     </div>
 
     <div class="uk-navbar-right">
-
       <ul class="uk-navbar-nav">
         <li>
-          <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-nav">
+          <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link" %>
+          <button class="uk-button uk-button-default  uk-hidden" type="button" uk-toggle="target: #offcanvas-nav">
             <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <rect y="9" width="20" height="2"></rect>
               <rect y="3" width="20" height="2"></rect>
@@ -34,19 +34,42 @@
   <div id="offcanvas-nav" uk-offcanvas="overlay: true">
     <div class="uk-offcanvas-bar">
       <div class="uk-panel">
-        <h3 class="uk-panel-title">Quick Start App</h3>
+        <h3 class="uk-panel-title">Bliimo Admin Module</h3>
         <ul class="uk-nav">
-            <li>
-              <%= link_to 'Dashboards', authenticated_root_path %>
-            </li>
-            <li>
-              <%= link_to 'Users', users_path %>
-            </li>
-            <li class="uk-nav-divider"></li>
+          <li>
+            <%= link_to 'Dashboards', authenticated_root_path %>
+          </li>
+          <li>
+            <%= link_to 'Evets', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Experiences', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Transactions', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Vouchers', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Reports', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Partners', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Categories', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Localities', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Audit Trail', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Administrators', users_path %>
+          </li>
         </ul>
-      </div>
-      <div class="uk-position-bottom bar-bottom uk-panel">
-        <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link" %>
       </div>
     </div>
   </div>
