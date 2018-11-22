@@ -9,35 +9,55 @@
 
 <% content_for :content do %>
   <div class="uk-vertical-align uk-text-center uk-height-1-1">
-    <div class="uk-vertical-align-middle" style="width: 250px;">
-    <%= image_tag("logo.png") %>
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <fieldset class="uk-fieldset">
-          <div class="uk-margin">
-            <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-input uk-form-large uk-background-secondary", placeholder: "Email" %>
-            </div>
-          </div>
-          <div class="uk-margin">
-            <div class="uk-inline uk-width-1-1">
-              <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: lock"></span>
-              <%= f.password_field :password, autocomplete: "off", class: "uk-input uk-form-large uk-background-secondary", placeholder: "Password" %>
-            </div>
-          </div>
-          
 
-          <div class="uk-form-row">
-            <%= f.submit "Login", class: "uk-button uk-button-primary uk-button-primary uk-button-small uk-width-1-3" %>
-          </div>
+    <div class="uk-container uk-container-center">
+      <div class="uk-grid">
+        <div class="uk-vertical-align-middle" style="width: 450px;">
+        <%= image_tag("logo.png") %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <fieldset class="uk-fieldset">
 
-          <div class="uk-form-row">
-            <% if false %>
-              <%= render "devise/shared/links" %>
-            <% end %>
-          </div>
-        </fieldset>
-      <% end %>
+              
+
+                <div class="uk-margin">
+                  <div class="uk-inline uk-width-1-1">
+                    <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "uk-input uk-form-large uk-background-secondary", placeholder: "Email" %>
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <div class="uk-inline uk-width-1-1">
+                    <span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: lock"></span>
+                    <%= f.password_field :password, autocomplete: "off", class: "uk-input uk-form-large uk-background-secondary", placeholder: "Password" %>
+                  </div>
+                </div>
+
+                <div class="uk-margin-auto uk-margin-auto-vertical uk-padding-small">
+                    <label><input class="uk-checkbox uk-background-default" type="checkbox"> REMEMBER ME</label>
+                </div>
+                
+
+                <div class="uk-form-row uk-margin-small-top">
+                  <%= f.submit "Login", class: "uk-button uk-button-primary uk-button-primary uk-button-small uk-width-1-3" %>
+                </div>
+
+                <div class="uk-margin-medium-top">
+                    <a class="uk-link-text" href="">FORGOT PASSWORD?</a>
+                </div>
+
+                <div class="uk-form-row">
+                  <% if false %>
+                    <%= render "devise/shared/links" %>
+                  <% end %>
+                </div>
+
+            
+
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
     </div>
+
   </div>
 <% end %>
