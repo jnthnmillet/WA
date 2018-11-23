@@ -16,11 +16,12 @@
       <ul class="uk-navbar-nav">
         <li>
 
+        
             <div class="uk-inline">
-                <a class="uk-link" href=""><span uk-icon="icon: user"></span>Me Backoffice</a>
-                <div uk-drop="mode: click">
-                    <div class="uk-card uk-card-body uk-card-default">
-                      <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link logout-nav" %>
+                <a class="uk-link uk-padding-small" href=""><span uk-icon="icon: user; ratio: .8" class="uk-margin-small-right"></span>Me Backoffice<span uk-icon="icon: triangle-down"></span></a>
+                <div uk-drop="mode: click" class="uk-margin-remove uk-width-small">
+                    <div class="uk-card uk-card-body uk-card-default uk-margin-remove">
+                      <%= link_to destroy_user_session_path, :method => :delete, class: 'logout-nav' do %><%= image_tag('poweroff.png', width:'20', class: 'uk-margin-small-left uk-margin-small-right') %><span>Logout</span><%end%>
                     </div>
                 </div>
             </div>
