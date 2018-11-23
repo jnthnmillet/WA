@@ -15,7 +15,18 @@
     <div class="uk-navbar-right">
       <ul class="uk-navbar-nav">
         <li>
-          <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link" %>
+
+            <div class="uk-inline">
+                <a class="uk-link" href=""><span uk-icon="icon: user"></span>Me Backoffice</a>
+                <div uk-drop="mode: click">
+                    <div class="uk-card uk-card-body uk-card-default">
+                      <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "uk-link logout-nav" %>
+                    </div>
+                </div>
+            </div>
+
+          
+          
           <button class="uk-button uk-button-default  uk-hidden" type="button" uk-toggle="target: #offcanvas-nav">
             <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <rect y="9" width="20" height="2"></rect>

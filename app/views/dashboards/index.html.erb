@@ -24,7 +24,168 @@
 
 <% content_for :content do %>  
   <div class="main uk-section">
-    <div class="uk-container uk-container-expand uk-position-relative">
+    <div class="uk-container dashboard-container">
+      <div class="uk-grid uk-margin-remove uk-width-1-1">
+        
+          <div class="uk-width-1-2 uk-padding-remove-left">
+            <div class="uk-grid uk-margin-remove total-earnings">
+              <div class="uk-grid uk-margin-remove uk-width-1-1 uk-padding-remove-left">
+                <span class="uk-padding-remove-left span-total-earnings">TOTAL EARNINGS - Sample only</span>
+              </div>
+              <div class="uk-grid uk-margin-remove uk-width-1-1 uk-padding-remove-left">
+                <h2 class="uk-margin-remove-top uk-padding-remove-left uk-text-bold">PHP 100.00</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="uk-width-1-2 uk-padding-remove-left">
+            <div class="uk-grid uk-margin-remove current-statement">
+                <div class="uk-grid uk-margin-remove uk-width-1-1 uk-padding-remove-left">
+                  <span class="uk-padding-remove-left span-earnings">PAY PERIOD</span>
+                </div>
+                
+                <div class="uk-grid uk-margin-remove uk-width-1-1 uk-padding-remove-left">
+                  <select class="uk-form-select" data-uk-form-select>
+                      <option value="">Current Statement</option>
+                      <option value="">Previous Statement</option>
+                  </select>
+                </div>
+            </div>
+          </div>
+        
+        </div>
+
+        <div class="uk-grid uk-margin-top uk-margin-remove-left uk-text-small row-bookings">
+
+          <div class="uk-grid uk-margin-remove booking-item uk-width-1-4">
+            <div class="uk-padding-remove-left">
+              <h3 class="uk-margin-remove-bottom bookingfont">0</h3>
+              <span>PAID BOOKINGS</span>
+            </div>
+          </div>
+
+          <div class="uk-grid uk-margin-remove booking-item uk-width-1-4">
+            <div class="uk-padding-remove-left">
+              <h3 class="uk-margin-remove-bottom">0</h3>
+              <span>RESERVED BOOKINGS</span>
+            </div>
+          </div>
+
+          <div class="uk-grid uk-margin-remove booking-item uk-width-1-4">
+            <div class="uk-padding-remove-left">
+              <h3 class="uk-margin-remove-bottom">0</h3>
+              <span>BOOKING CANCELATIONS</span>
+            </div>
+          </div>
+
+          <div class="uk-grid uk-margin-remove uk-width-1-4">
+            <div class="uk-padding-remove-left">
+              
+            </div>
+          </div>
+
+        </div>
+
+
+          <div class="uk-grid uk-margin  uk-margin-medium-top">
+            <h3>Weekly Earnings</h3>
+          </div>
+          <div class="uk-grid uk-width-1-1 uk-margin-remove uk-border-rounded earning-list">
+            <div class="uk-grid uk-width-1-1 uk-margin-remove container-list">
+              <a href="#" class="uk-grid uk-width-1-1 uk-margin-remove container-list-item inner-list">
+                  <div class="uk-grid uk-width-2-3 earnings-label">
+                    <span class="earnings">Earnings</span>
+                  </div>
+                  <div class="uk-grid uk-width-1-3 uk-margin-remove-top">
+                    <span class="uk-text-bold weekly-earning">PHP10,000</span>
+                  </div>
+              </a>
+              <div class="uk-grid uk-width-1-1 uk-margin-remove container-list-item">
+                <div class="uk-grid uk-width-1-1">
+                  <div class="uk-grid uk-width-2-3">
+                    <span class="earnings">Earnings</span>
+                  </div>
+                  <div class="uk-grid uk-width-1-3 uk-margin-remove-top">
+                    <span class="uk-text-bold weekly-earning-mid">PHP10,000</span>
+                  </div>
+                </div>
+                <div class="uk-grid uk-width-1-1 uk-margin-remove-top">
+                  <div class="uk-grid uk-width-2-3">
+                    <span class="earnings">Earnings</span>
+                  </div>
+                  <div class="uk-grid uk-width-1-3 uk-margin-remove-top">
+                    <span class="uk-text-bold weekly-earning-mid">PHP10,000</span>
+                  </div>
+                </div>
+              </div>
+              <div class="uk-grid uk-width-1-1 uk-margin-remove container-list-item">
+                <div class="uk-grid uk-width-2-3">
+                  <span class="uk-text-bold earnings-label">Estimated Bank Deposit</span>
+                </div>
+                <div class="uk-grid uk-width-1-3 uk-margin-remove-top">
+                  <span class="uk-text-bold weekly-earning">PHP10,000</span>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="uk-grid uk-width-1-1 uk-margin-remove">
+                <h3 class="uk-margin-medium-top uk-margin-medium-bottom uk-padding-remove-left">Daily Earnings</h3>
+            </div>
+            
+                <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+                  <a href="#" class="active-date border-bottom">
+                    <div>
+                      <span class="date">TUE JAN 30</span><br>
+                      <span class="uk-text-bold daily-earning">PHP900.00</span>
+                    </div>
+                  </a>
+                  <a href="#" class="active-date">
+                    <div>
+                      <span class="date">TUE JAN 30</span><br>
+                      <span class="uk-text-bold daily-earning">-</span>
+                    </div>
+                  </a>
+                  <a href="#" class="active-date">
+                    <div>
+                      <span class="date">TUE JAN 30</span><br>
+                      <span class="uk-text-bold daily-earning">-</span>
+                    </div>
+                  </a>
+                  <a href="#" class="active-date">
+                    <div>
+                      <span class="date">TUE JAN 30</span><br>
+                      <span class="uk-text-bold daily-earning">-</span>
+                    </div>
+                  </a>
+                  <a href="#" class="active-date">
+                    <div>
+                      <span class="date">TUE JAN 30</span><br>
+                      <span class="uk-text-bold daily-earning">-</span>
+                    </div>
+                  </a>
+                  <a href="#" class="active-date">
+                    <div>
+                        <span class="date">TUE JAN 30</span><br>
+                        <span class="uk-text-bold daily-earning">-</span>
+                      </div>
+                    </a>
+                  <a href="#" class="active-date">
+                    <div>
+                      <span class="date">TUE JAN 30</span><br>
+                      <span class="uk-text-bold daily-earning">-</span>
+                    </div>
+                  </a>
+                  <a href="#" class="active-date">
+                    <div>
+                      <span class="date">TUE JAN 30</span><br>
+                      <span class="uk-text-bold daily-earning">-</span>
+                    </div>
+                  </a>
+                </div>
+                    
+        </div>
+        
+      </div>
     </div>
   </div>
 <% end %>
