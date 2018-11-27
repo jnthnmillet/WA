@@ -2,13 +2,13 @@
 <div class="main uk-section">
   <div class="uk-container uk-container-expand uk-position-relative uk-padding-small">
     <div class="uk-grid uk-margin-remove">
-      <div class="uk-padding-remove"><h2>Localities</h2></div>
+      <div class="uk-padding-remove"><h2>Events</h2></div>
     </div>
     <div class="uk-grid uk-margin-small-bottom uk-margin-remove-top uk-margin-remove-right uk-margin-remove-left breadcrumb uk-border-rounded">
       <div class="uk-padding-small">
         <ul class="uk-breadcrumb">
           <li><%= image_tag('dashboard-icon.jpg', class: 'uk-icon-image') %><a href="#" class="uk-margin-small-left">Dashboard</a></li>
-          <li><span uk-icon="file-edit"></span><a href="#" class="uk-margin-small-left">Localities</a></li>
+          <li><span uk-icon="file-edit"></span><a href="#" class="uk-margin-small-left">Events</a></li>
         </ul>
       </div>
     </div>
@@ -16,8 +16,7 @@
       <div class="uk-padding-remove uk-width-1-1">
         <div class="uk-panel uk-margin-remove uk-border-rounded localities-panel">
           <div class="uk-padding-small localities-panel-header">
-            <span>Localities</span>
-            <button class="uk-button-primary uk-button-small uk-float-right uk-border-rounded"><span uk-icon="icon: plus; ratio: .8"></span><span> Add New Locality</span></button>
+            <span>Events</span> <button class="uk-button-primary uk-button-small uk-float-right uk-border-rounded"><span uk-icon="icon: plus; ratio: .8"></span><span> Add New Event</span></button>
           </div>
           <div class="uk-padding small">
             <div class="content-well p-x-2 p-y-2">
@@ -25,61 +24,55 @@
                 <table class="uk-table uk-table-striped uk-table-middle uk-table-divider uk-table-large localities-table" data-uk-scrollspy="cls:uk-animation-fade;">
                   <thead>
                     <tr>
-                      <th class="uk-text-capitalize">Image</th>
-                      <th class="uk-text-capitalize"><span uk-icon="icon: triangle-up"></span>Locality</th>
-                      <th class="uk-text-capitalize"><span uk-icon="icon: triangle-up"></span>Province</th>
-                      <th class="uk-text-capitalize"><span uk-icon="icon: triangle-up"></span>Super Locale</th>
-                      <th class="uk-text-capitalize"><span uk-icon="icon: triangle-up"></span>Country</th>
-                      <th class="uk-text-capitalize">Action</th>
+                      <th class="uk-text-capitalize">Title</th>
+                      <th class="uk-text-capitalize">Category</th>
+                      <th class="uk-text-capitalize">SubCategory</th>
+                      <th class="uk-text-capitalize">Price</th>
+                      <th class="uk-text-capitalize">Address</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr class="uk-padding-remove">
-                      <td><%= image_tag('poweroff.png', width:'40') %></td>
-                      <td>ANGELES CITY</td>
-                      <td>PAMPANGA</td>
-                      <td></td>
-                      <td>PHILIPPINES</td>
+                      <td class="uk-text-bold">Laser Tag Tournament</td>
+                      <td>Extreme</td>
+                      <td>Combat Gaming</td>
+                      <td>4th level, Market! Market!, Bonifacio Global City, Taguig, 1634 Metro Manila, Philippines</td>
                       <td>
                         <button class="uk-button-primary uk-border-rounded"><span uk-icon="icon: pencil"></span></button>
                       </td>
                     </tr>
                     <tr class="uk-padding-remove">
-                      <td><%= image_tag('poweroff.png', width:'40') %></td>
-                      <td>ALMERIA</td>
-                      <td>BILIRAN</td>
-                      <td></td>
-                      <td>PHILIPPINES</td>
+                      <td class="uk-text-bold">BlackPink Concert</td>
+                      <td>Extreme</td>
+                      <td>Combat Gaming</td>
+                      <td>4th level, Market! Market!, Bonifacio Global City, Taguig, 1634 Metro Manila, Philippines</td>
                       <td>
                         <button class="uk-button-primary uk-border-rounded"><span uk-icon="icon: pencil"></span></button>
                       </td>
                     </tr>
                     <tr class="uk-padding-remove">
-                      <td><%= image_tag('poweroff.png', width:'40') %></td>
-                      <td>ANDA</td>
-                      <td></td>
-                      <td></td>
-                      <td>PHILIPPINES</td>
+                      <td class="uk-text-bold">League of Legends Tournament</td>
+                      <td>Extreme</td>
+                      <td>Combat Gaming</td>
+                      <td>4th level, Market! Market!, Bonifacio Global City, Taguig, 1634 Metro Manila, Philippines</td>
                       <td>
                         <button class="uk-button-primary uk-border-rounded"><span uk-icon="icon: pencil"></span></button>
                       </td>
                     </tr>
                     <tr class="uk-padding-remove">
-                      <td><%= image_tag('poweroff.png', width:'40') %></td>
-                      <td>ANDA</td>
-                      <td>BOHOL</td>
-                      <td></td>
-                      <td>PHILIPPINES</td>
+                      <td class="uk-text-bold">Rules of Survival Tournament</td>
+                      <td>Extreme</td>
+                      <td>Combat Gaming</td>
+                      <td>4th level, Market! Market!, Bonifacio Global City, Taguig, 1634 Metro Manila, Philippines</td>
                       <td>
                         <button class="uk-button-primary uk-border-rounded"><span uk-icon="icon: pencil"></span></button>
                       </td>
                     </tr>
                     <tr class="uk-padding-remove">
-                      <td><%= image_tag('poweroff.png', width:'40') %></td>
-                      <td>ANGELES</td>
-                      <td></td>
-                      <td></td>
-                      <td>PHILIPPINES</td>
+                      <td class="uk-text-bold">DOTA 2 Tournament</td>
+                      <td>Extreme</td>
+                      <td>Combat Gaming</td>
+                      <td>4th level, Market! Market!, Bonifacio Global City, Taguig, 1634 Metro Manila, Philippines</td>
                       <td>
                         <button class="uk-button-primary uk-border-rounded"><span uk-icon="icon: pencil"></span></button>
                       </td>
